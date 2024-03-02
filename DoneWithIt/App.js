@@ -1,4 +1,5 @@
 import {
+  Dimensions,
   StyleSheet,
   Text,
   TouchableHighlight,
@@ -11,16 +12,28 @@ import {
   StatusBar,
 } from "react-native";
 
+import {
+  useDimensions,
+  useDeviceOrientation,
+} from "@react-native-community/hooks";
+
 export default function App() {
+  console.log("====================================");
+  console.log(useDeviceOrientation());
+  console.log("====================================");
+  console.log("====================================");
+
+  const { landscape } = useDeviceOrientation();
+
   return (
     <SafeAreaView style={styles.container}>
-      <Button
-        color={"orange"}
-        title="Click Me"
-        onPress={() =>
-          Alert.prompt("My title", "My message", (text) => console.log(text))
-        }
-      />
+      <View
+        style={{
+          backgroundColor: "dodgerblue",
+          width: "100%",
+          height: useDeviceOrientation() == "landscape" ? "100%" : "30%",
+        }}
+      ></View>
     </SafeAreaView>
   );
 }
