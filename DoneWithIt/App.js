@@ -10,8 +10,6 @@ export default function App() {
         flexDirection: "row", // horizontal
         justifyContent: "center", // main
         alignItems: "center", // secondary
-        alignContent: "center",
-        flexWrap: "wrap",
       }}
     >
       <View
@@ -26,6 +24,9 @@ export default function App() {
           backgroundColor: "gold",
           height: 100,
           width: 100,
+          top: 20,
+          left: 20,
+          position: "relative",
         }}
       />
       <View
